@@ -2,9 +2,9 @@
 description: 概述量子運算的機制，理解上需要相當程度的線性代數基礎。
 ---
 
-# 2 Introduction to quantum mechanics
+# 2. Introduction to quantum mechanics
 
-## 2.1 Quantum bits \(qubits\)
+## 2.1. Quantum bits \(qubits\)
 
 一個量子位元的表示法如下：
 
@@ -63,7 +63,7 @@ $$
 \tag{2.7}
 $$
 
-## 2.2 Single qubit gates
+## 2.2. Single qubit gates
 
 時間演變定理 $$\mathrm{(Principle\ of}\ time\ evolution\mathrm{)}$$ ：在時間點 $$t$$ 的量子態 $$\mathrm{(Quantum\ State)}$$ 為 $$|\psi\rangle$$ ，而在時間點 $$t^{\prime}>t$$ 時，此時量子態 $$|\psi\rangle^{\prime}$$ 的轉移矩陣可使用么正矩陣 $$\mathrm{(Unitary\ Matrix)}$$$$U$$ 表示：  
 \(思考：**么正矩陣**的特性包含**保長度**及**保內積**，這為什麼對量子位元的**向量空間**重要？\)
