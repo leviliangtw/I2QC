@@ -1,8 +1,6 @@
----
-description: 概述量子運算的機制，理解上需要相當程度的線性代數基礎。
----
-
 # 2. Introduction to quantum mechanics
+
+概述量子運算的機制，理解上需要相當程度的線性代數基礎。
 
 ## 2.1. Quantum bits \(qubits\)
 
