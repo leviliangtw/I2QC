@@ -1,10 +1,8 @@
-# 2. Introduction to quantum mechanics
+# 2.1 Introduction to quantum mechanics - Quantum bits \(qubits\)
 
-概述量子運算的機制，理解上需要相當程度的線性代數基礎。
+## 量子位元的表示法
 
-## 2.1. Quantum bits \(qubits\)
-
-一個量子位元的表示法如下：
+一個量子位元可表示如下：
 
 $$
 |\psi\rangle=\alpha|0\rangle+\beta|1\rangle,\ \mathrm{with}\ \alpha,\beta\in\mathbb{C}\ \mathrm{and}\ |\alpha|^2+|\beta|^2=1 \ \mathrm{(normalization)}
@@ -25,6 +23,8 @@ $$
 $$
 
 ![Source: https://commons.wikimedia.org/wiki/File:Euler%27s\_formula.png](.gitbook/assets/image.png)
+
+## 量子態的表示法
 
 接下來，我們來看看 $$|\psi\rangle$$ 是怎麼表示的：
 
@@ -59,149 +59,5 @@ $$
 $$
 \vec{r} = \begin{pmatrix} \cos(\psi)\sin(\phi) & \sin(\psi)\sin(\phi) & \cos(\phi) \end{pmatrix}
 \tag{2.7}
-$$
-
-## 2.2. Single qubit gates
-
-時間演變定理 $$\mathrm{(Principle\ of}\ time\ evolution\mathrm{)}$$ ：在時間點 $$t$$ 的量子態 $$\mathrm{(Quantum\ State)}$$ 為 $$|\psi\rangle$$ ，而在時間點 $$t^{\prime}>t$$ 時，此時量子態 $$|\psi\rangle^{\prime}$$ 的轉移矩陣可使用么正矩陣 $$\mathrm{(Unitary\ Matrix)}$$$$U$$ 表示：  
-\(思考：**么正矩陣**的特性包含**保長度**及**保內積**，這為什麼對量子位元的**向量空間**重要？\)
-
-$$
-|\psi\rangle^{\prime}=U |\psi\rangle,
-\\
-\mathrm{and}\ 
-\|U|\psi\rangle\| = \||\psi\rangle\| \ \mathrm{for\ all\ |\psi\rangle\in\mathbb{C}^2}
-\tag{2.8}
-$$
-
-因此，
-
-$$
-|\psi\rangle = 
-\begin{pmatrix} 
-\alpha \\ 
-\beta 
-\end{pmatrix}
-,\ 
-|\psi\rangle^{\prime} = 
-\begin{pmatrix} 
-\alpha^{\prime} \\ 
-\beta^{\prime} 
-\end{pmatrix}
-,\ 
-U = 
-\begin{pmatrix} 
-a & b \\ 
-c & d
-\end{pmatrix}
-,\ 
-\tag{2.9}
-$$
-
-$$
-|\psi\rangle^{\prime} = U |\psi\rangle
-= 
-\begin{pmatrix} 
-a & b \\ 
-c & d
-\end{pmatrix}
-\begin{pmatrix} 
-\alpha^{\prime} \\ 
-\beta^{\prime} 
-\end{pmatrix}
-=
-\begin{pmatrix} 
-a\alpha^{\prime} & b\beta^{\prime} \\ 
-c\alpha^{\prime} & d\beta^{\prime}
-\end{pmatrix}
-\tag{2.10}
-$$
-
-接下來介紹三種基礎的量子閘 $$\mathrm{(Gate)}$$ ：  
-\(視覺化模型可參考：[https://javafxpert.github.io/grok-bloch/](https://javafxpert.github.io/grok-bloch/)\)
-
-* $$\mathrm{Pauli\ X\ gate}\ (\sigma_1)$$ ：如同傳統的 $$\mathrm{Not\ gate}$$ ，將 $$|0\rangle \leftrightarrow |1\rangle$$ 的係數反轉。 \(思考：當$$|1\rangle$$的係數是複數時，為了提出$$\mathrm{global\ phase\ factor}$$，該如何對 $$|\psi\rangle$$ 進行操作？\)
-
-$$
-X= \sigma_1 = 
-\begin{pmatrix} 
-0 & 1 \\ 
-1 & 0 \\
-\end{pmatrix}
-\tag{2.11}
-$$
-
-* $$\mathrm{Pauli\ Y\ gate}\ (\sigma_2)$$ ：先將 $$|0\rangle \leftrightarrow |1\rangle$$ 的係數反轉，再分別乘以 $$i$$ 與 $$-i$$ 以進行座標的旋轉。 \(思考：$$\mathrm{e}^{i\frac{\pi}{2}} = i$$及$$\mathrm{e}^{i\frac{3\pi}{2}} = -i$$，反轉與旋轉後，該如何對 $$|\psi\rangle$$ 進行操作？\)
-
-$$
-Y= \sigma_1 = 
-\begin{pmatrix} 
-0 & -i \\ 
-i  & 0 \\
-\end{pmatrix}
-\tag{2.12}
-$$
-
-* $$\mathrm{Pauli\ Z\ gate}\ (\sigma_3)$$ ：令 $$|0\rangle$$ 維持不變，翻轉 $$|1\rangle$$ 。
-
-$$
-Z= \sigma_1 = 
-\begin{pmatrix} 
-1 & 0 \\ 
-0 & -1 \\
-\end{pmatrix}
-\tag{2.13}
-$$
-
-這裡來思考$$\sigma_3$$的運算，首先 $$|\psi\rangle = \cos\dfrac{\theta}{2}|0\rangle+\mathrm{e}^{i\psi}\sin\dfrac{\theta}{2}|1\rangle$$ ，因此我們以 $$\mathrm{e}^{i\pi} = -1$$ 進行反轉運算。
-
-$$
-Z|\psi\rangle = \cos\dfrac{\theta}{2}|0\rangle - \mathrm{e}^{i\psi}\sin\dfrac{\theta}{2}|1\rangle = \cos\dfrac{\theta}{2}|0\rangle + \mathrm{e}^{i(\psi+\pi)}\sin\dfrac{\theta}{2}|1\rangle 
-\tag{2.15}
-$$
-
-在 $$\mathrm{Bloch\ Sphere}$$ 上觀察，即是繞著 $$Z軸$$ 旋轉 $$180\degree$$的結果。
-
-而 $$X,\ Y,\ Z\ \mathrm{gates}$$ 稱作 $$\mathrm{Pauli\ Matrices}$$ 。  
-向量表示： $$\mathrm{Pauli\ vector}\ \vec{\sigma} =  \begin{pmatrix}  \sigma_1 & \sigma_2 & \sigma_3 \\  \end{pmatrix} \ \mathrm{is\ a\ vector\ of\ 2 \times 2\ matrices}$$。
-
-再來三種量子閘 $$\mathrm{(Gate)}$$ ：
-
-* $$\mathrm{Hadamard\ gate}$$ ：
-
-$$
-H = \dfrac{1}{\sqrt{2}}
-\begin{pmatrix}
-1 & 1 \\
-1 & -1 \\
-\end{pmatrix}
-\tag{2.16}
-$$
-
-* $$\mathrm{Phase\ gate}$$ ：沿著 $$Z軸$$ 轉 $$90\degree$$。
-
-$$
-S = 
-\begin{pmatrix}
-1 & 0 \\
-0 & i \\
-\end{pmatrix}
-=
-\begin{pmatrix}
-1 & 0 \\
-0 & \mathrm{e}^{i\frac{\pi}{2}}
-\end{pmatrix}
-\tag{2.17}
-$$
-
-* $$\mathrm{T\ gate}$$ ：沿著 $$Z軸$$ 轉 $$45\degree$$。
-
-$$
-T = 
-\begin{pmatrix}
-1 & 0 \\
-0 & \mathrm{e}^{i\frac{\pi}{4}}
-\end{pmatrix}
-\tag{2.18}
 $$
 
