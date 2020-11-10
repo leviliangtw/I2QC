@@ -75,52 +75,113 @@ H &= \dfrac{1}{\sqrt{2}}
 1 & 1 \\
 1 & -1
 \end{pmatrix}
-= 
-\mathrm{e}^{i\frac{3\pi}{2}}
+=
+\mathrm{e}^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\sigma)
+\end{split}
+$$
+
+Expanding $$R_z,\ R_y$$, we get
+
+$$
+\begin{split}
+
+\dfrac{1}{\sqrt{2}}
 \begin{pmatrix}
-\frac{i}{\sqrt{2}} & \frac{i}{\sqrt{2}} \\
-\frac{i}{\sqrt{2}} & \frac{-i}{\sqrt{2}}
+1 & 1 \\
+1 & -1
 \end{pmatrix}
-= 
-\mathrm{e}^{i\frac{3\pi}{2}}
+=
+\mathrm{e}^{i\alpha}
 \begin{pmatrix}
--1 & 0 \\
-0 & -1
-\end{pmatrix}
-\begin{pmatrix}
-\frac{-i}{\sqrt{2}} & \frac{-i}{\sqrt{2}} \\
-\frac{-i}{\sqrt{2}} & \frac{i}{\sqrt{2}}
-\end{pmatrix}
-\\&= 
-\mathrm{e}^{i\frac{3\pi}{2}}
-\begin{pmatrix}
--1 & 0 \\
-0 & -1
-\end{pmatrix}
-\begin{pmatrix}
-\frac{1}{\sqrt{2}} & \frac{-1}{\sqrt{2}} \\
-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}
+\mathrm{e}^{\frac{-i\beta}{2}} & 0 \\
+0 & \mathrm{e}^{\frac{i\beta}{2}}
 \end{pmatrix}
 \begin{pmatrix}
--i & 0 \\
-0 & i
-\end{pmatrix}
-\\&=
-\mathrm{e}^{i\frac{3\pi}{2}}
-\begin{pmatrix}
-\mathrm{e}^{-i(\frac{2\pi}{2})} & 0 \\
-0 & \mathrm{e}^{i(\frac{2\pi}{2})}
+\cos\frac{\gamma}{2} & -\sin\frac{\gamma}{2} \\
+\sin\frac{\gamma}{2} & \cos\frac{\gamma}{2}
 \end{pmatrix}
 \begin{pmatrix}
-\cos\frac{(\pi/2)}{2} & -\sin\frac{(\pi/2)}{2} \\
-\sin\frac{(\pi/2)}{2} & \cos\frac{(\pi/2)}{2}
+\mathrm{e}^{\frac{-i\delta}{2}} & 0 \\
+0 & \mathrm{e}^{\frac{i\delta}{2}}
+\end{pmatrix}
+\end{split}
+$$
+
+Multiplying and simplifying RHS, 
+
+$$
+\begin{eqnarray}
+
+&&
+\begin{pmatrix}
+\mathrm{e}^{i (\alpha - \frac{\beta}{2})} & 0 \\
+0 & \mathrm{e}^{i (\alpha + \frac{\beta}{2})}
 \end{pmatrix}
 \begin{pmatrix}
-\mathrm{e}^{-i(\frac{\pi}{2})} & 0 \\
-0 & \mathrm{e}^{i(\frac{\pi}{2})}
+\mathrm{e}^{\frac{-i \delta}{2}}\cos\frac{\gamma}{2} & -\mathrm{e}^{\frac{i \delta}{2}}\sin\frac{\gamma}{2} 
+\\
+\mathrm{e}^{\frac{-i \delta}{2}}\sin\frac{\gamma}{2} & \mathrm{e}^{\frac{i \delta}{2}}\cos\frac{\gamma}{2}
 \end{pmatrix}
-\\&=
-\mathrm{e}^{i\frac{3\pi}{2}}R_z(2\pi)R_y(\frac{\pi}{2})R_z(\pi)
+=
+\dfrac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}
+\\
+\Rightarrow
+&&
+\begin{pmatrix}
+\mathrm{e}^{i (\alpha - \frac{\beta}{2} - \frac{\delta}{2})}\cos\frac{\gamma}{2} & -\mathrm{e}^{i (\alpha - \frac{\beta}{2} + \frac{\delta}{2})}\sin\frac{\gamma}{2} 
+\\
+\mathrm{e}^{i (\alpha + \frac{\beta}{2} - \frac{\delta}{2})}\sin\frac{\gamma}{2} & \mathrm{e}^{i (\alpha + \frac{\beta}{2} + \frac{\delta}{2})}\cos\frac{\gamma}{2}
+\end{pmatrix}
+=
+\dfrac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}
+
+\end{eqnarray}
+$$
+
+Equaling exch value, 
+
+$$
+\begin{eqnarray}
+
+&\begin{cases}
+\mathrm{e}^{i (\alpha - \frac{\beta}{2} - \frac{\delta}{2})}\cos\frac{\gamma}{2} = \frac{1}{\sqrt{2}} \\
+\mathrm{e}^{i (\alpha + \frac{\beta}{2} - \frac{\delta}{2})}\sin\frac{\gamma}{2} = \frac{1}{\sqrt{2}} \\
+-\mathrm{e}^{i (\alpha - \frac{\beta}{2} + \frac{\delta}{2})}\sin\frac{\gamma}{2} = \frac{1}{\sqrt{2}} \\
+\mathrm{e}^{i (\alpha + \frac{\beta}{2} + \frac{\delta}{2})}\cos\frac{\gamma}{2} = -\frac{1}{\sqrt{2}} \\
+\end{cases}
+
+\end{eqnarray}
+$$
+
+Solving the equation above, we get
+
+$$
+\alpha = \dfrac{3 \pi}{2},\ 
+\beta = 0,\ 
+\gamma = \dfrac{\pi}{2},\ 
+\delta = \pi
+\\
+$$
+
+Thus, 
+
+$$
+\begin{split}
+H &= \dfrac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}
+=
+\mathrm{e}^{i\frac{3\pi}{2}}R_z(0)R_y(\frac{\pi}{2})R_z(\pi)
 \end{split}
 $$
 
