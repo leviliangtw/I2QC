@@ -1,8 +1,7 @@
-# TUM-IN2381-Introduction to Quantum Computing
+# Introduction to Quantum Computing
 
-## Github: [https://github.com/leviliangtw/TUM-IN2381-I2](https://github.com/leviliangtw/TUM-IN2381-I2QC)
-
-## Gitbook: [https://leviliangtw.gitbook.io/tum-in2381-i2qc/](https://leviliangtw.gitbook.io/tum-in2381-i2qc/)
+- Github: [leviliangtw/I2QC](https://github.com/leviliangtw/I2QC)
+- Gitbook: [Introduction to Quantum Computing - I2QC](https://leviliangtw.gitbook.io/i2qc/)
 
 ## 1.0.2 - 2020-11-07
 
