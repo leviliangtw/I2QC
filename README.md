@@ -1,7 +1,12 @@
+---
+description: 淺顯易懂的量子運算入門
+---
+
 # Introduction to Quantum Computing
 
-- Github: [leviliangtw/I2QC](https://github.com/leviliangtw/I2QC)
-- Gitbook: [Introduction to Quantum Computing - I2QC](https://leviliangtw.gitbook.io/i2qc/)
+* Github: [leviliangtw/I2QC](https://github.com/leviliangtw/I2QC)
+* Gitbook: [Introduction to Quantum Computing - I2QC](https://leviliangtw.gitbook.io/i2qc/)
+* Reference: [Quantum Computing - Mendl](https://www5.in.tum.de/\~quanTUMcomputing/)
 
 ## 1.0.2 - 2020-11-07
 
@@ -33,5 +38,4 @@
 ### Initial Commit
 
 * 1 Introduction - completed
-* 2.1 Quantum bits \(qubits\) - completed
-
+* 2.1 Quantum bits (qubits) - completed
